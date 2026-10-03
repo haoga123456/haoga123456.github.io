@@ -1,41 +1,90 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>csp-j基本签到题专项训练 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="csp-j基本签到题专项训练T1题目传送门 这是一个贪心的思想，可以先对输入的数据进行模拟，看看在不增加防御值之前每个牛棚在受到陨石的攻击之后的防御值是多少，按照从大到小的顺序排序，如果是正数就不需要加防御值，否则加上与1的差值，例如某一个防御塔在受击之后的防御值是-2那么就要加上3使其等于1，直到没有足够的时间加，最后  的就是答案 AC CODE123456789101112131415161">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="haoga123456">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="csp-j基本签到题专项训练T1题目传送门 这是一个贪心的思想，可以先对输入的数据进行模拟，看看在不增加防御值之前每个牛棚在受到陨石的攻击之后的防御值是多少，按照从大到小的顺序排序，如果是正数就不需要加防御值，否则加上与1的差值，例如某一个防御塔在受击之后的防御值是-2那么就要加上3使其等于1，直到没有足够的时间加，最后  的就是答案 AC CODE123456789101112131415161">
 <meta property="og:type" content="article">
 <meta property="og:title" content="csp-j基本签到题专项训练">
-<meta property="og:url" content="http://example.com/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://haoga123456.github.io/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/index.html">
+<meta property="og:site_name" content="算法学习笔记">
 <meta property="og:description" content="csp-j基本签到题专项训练T1题目传送门 这是一个贪心的思想，可以先对输入的数据进行模拟，看看在不增加防御值之前每个牛棚在受到陨石的攻击之后的防御值是多少，按照从大到小的顺序排序，如果是正数就不需要加防御值，否则加上与1的差值，例如某一个防御塔在受击之后的防御值是-2那么就要加上3使其等于1，直到没有足够的时间加，最后  的就是答案 AC CODE123456789101112131415161">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-08-29T03:00:00.000Z">
 <meta property="article:modified_time" content="2026-08-30T00:23:49.583Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="haoga123456">
 <meta property="article:tag" content="学习记录">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+  <title>csp-j基本签到题专项训练 - 算法学习笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"haoga123456.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 8.1.2"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
@@ -150,67 +199,277 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>算法学习笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
       </div>
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-csp-j基本签到题专项训练" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/" class="article-date">
-  <time class="dt-published" datetime="2026-08-29T03:00:00.000Z" itemprop="datePublished">2026-08-29</time>
-</a>
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="csp-j基本签到题专项训练"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-08-29 11:00" pubdate>
+          2026年8月29日 上午
+        </time>
+      </span>
     
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      csp-j基本签到题专项训练
-    </h1>
-  
 
-      </header>
+  <div class="mt-1">
     
-    <div class="e-content article-entry" itemprop="articleBody">
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
       
-        <h1 id="csp-j基本签到题专项训练"><a href="#csp-j基本签到题专项训练" class="headerlink" title="csp-j基本签到题专项训练"></a>csp-j基本签到题专项训练</h1><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B3938">题目传送门</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">csp-j基本签到题专项训练</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="csp-j基本签到题专项训练"><a href="#csp-j基本签到题专项训练" class="headerlink" title="csp-j基本签到题专项训练"></a>csp-j基本签到题专项训练</h1><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B3938">题目传送门</a></p>
 <p>这是一个<strong>贪心</strong>的思想，可以先对输入的数据进行模拟，看看在不增加防御值之前每个牛棚在受到陨石的攻击之后的防御值是多少，按照从大到小的顺序排序，如果是正数就不需要加防御值，否则加上与1的差值，例如某一个防御塔在受击之后的防御值是-2那么就要加上3使其等于1，直到没有足够的时间加，最后 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.269ex;" xmlns="http://www.w3.org/2000/svg" width="3.52ex" height="1.776ex" role="img" focusable="false" viewBox="0 -666 1555.8 785"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="  \ge1"><g data-mml-node="mo" data-latex="\ge"><path data-c="2265" d="M684 310C694 315 699 322 699 333C699 344 694 352 684 357L110 629C107 630 103 631 99 631C83 631 75 623 75 606C75 597 80 590 89 586L623 333L89 80C80 76 75 69 75 60C75 43 83 35 99 35C103 35 107 36 110 38M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mn" data-latex="1" transform="translate(1055.8,0)"><path data-c="31" d="M269 666C228 624 168 603 89 603L89 564C141 564 184 572 217 588L217 82C217 64 213 52 204 47C195 42 170 39 130 39L95 39L95 0C120 2 174 3 257 3C340 3 394 2 419 0L419 39L384 39C343 39 318 42 310 47C302 52 297 64 297 82L297 636C297 660 295 666 269 666Z"></path></g></g></g></svg></mjx-container> 的就是答案</p>
-<h3 id="AC-CODE"><a href="#AC-CODE" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">5e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> M = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> T, n, t, m, a[N], x[M];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">return</span> a &gt; b;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; t &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    {</span><br><span class="line">        cin &gt;&gt; x[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    {</span><br><span class="line">        a[x[i]] -= <span class="number">2</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        a[i] -= <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (a[i] &gt; <span class="number">0</span>)</span><br><span class="line">        {</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (t &gt;= -a[i])</span><br><span class="line">        {</span><br><span class="line">            t -= -a[i];</span><br><span class="line">            ans++;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    {</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="AC-CODE"><a href="#AC-CODE" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">5e3</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> M = <span class="hljs-number">1e6</span> + <span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> T, n, t, m, a[N], x[M];<br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>{<br>    <span class="hljs-keyword">return</span> a &gt; b;<br>}<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; n &gt;&gt; t &gt;&gt; m;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        cin &gt;&gt; a[i];<br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++)<br>    {<br>        cin &gt;&gt; x[i];<br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++)<br>    {<br>        a[x[i]] -= <span class="hljs-number">2</span>;<br>    }<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n, cmp);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        a[i] -= <span class="hljs-number">1</span>;<br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        <span class="hljs-keyword">if</span> (a[i] &gt; <span class="hljs-number">0</span>)<br>        {<br>            ans++;<br>            <span class="hljs-keyword">continue</span>;<br>        }<br>        <span class="hljs-keyword">if</span> (t &gt;= -a[i])<br>        {<br>            t -= -a[i];<br>            ans++;<br>        }<br>        <span class="hljs-keyword">else</span><br>            <span class="hljs-keyword">break</span>;<br>    }<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>}<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; T;<br>    <span class="hljs-keyword">while</span> (T--)<br>    {<br>        <span class="hljs-built_in">solve</span>();<br>    }<br>}<br></code></pre></td></tr></table></figure>
 
 <h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1002">题目传送门</a></p>
 <p><del>这道题好像不是水题</del></p>
@@ -219,16 +478,16 @@ mjx-container[display="true"] + br {
 <p>我们可以设 <code>f[i][j]</code> 表示到第 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="i"><g data-mml-node="mi" data-latex="i"><path data-c="1D456" d="M284 621C284 648 271 661 244 661C216 661 188 633 188 605C188 578 202 565 229 565C257 565 284 593 284 621M259 138C237 59 205 19 164 19C151 19 144 28 144 47C144 64 173 150 232 306C240 329 244 347 244 360C244 409 210 445 161 445C118 445 84 420 59 369C39 328 29 301 29 288C29 279 34 275 45 275C58 275 60 281 64 295C87 375 118 415 158 415C171 415 178 406 178 387C178 373 175 357 168 338C145 275 121 208 101 155C86 115 78 88 78 74C78 25 114-11 162-11C205-11 239 14 264 64C283 103 293 130 293 145C293 154 288 159 277 159C274 159 259 150 259 138Z"></path></g></g></g></svg></mjx-container> 行第 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="0.932ex" height="1.959ex" role="img" focusable="false" viewBox="0 -661 412 866"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="j"><g data-mml-node="mi" data-latex="j"><path data-c="1D457" d="M397 621C397 648 383 661 356 661C328 661 300 633 300 605C300 578 313 565 340 565C368 565 397 593 397 621M267 444C214 444 169 404 147 369C120 326 107 299 107 287C107 278 112 274 122 274C127 274 130 275 133 276C138 284 141 291 144 296C176 375 216 414 264 414C282 414 291 400 291 373C291 358 289 341 284 323L192-46C178-104 138-175 75-175C66-175 57-174 48-171C73-161 85-143 85-118C85-92 71-79 44-79C12-79-13-108-13-140C-13-184 30-205 77-205C120-205 160-190 197-160C232-131 254-94 265-51L356 311C359 324 361 337 361 349C361 404 322 444 267 444Z"></path></g></g></g></svg></mjx-container> 列有多少种路径</p>
 <p>那么 <code>f[i][j]</code> 的路径条数可以从上边的格子下来（有且仅有一种路径）和从左边的格子过来（有且仅有一条路径），即： <code>f[i][j]=f[i-1][j]+f[i][j-1]</code></p>
 <p><strong>温馨提示</strong>：如果马和马能跳到的位置在第一行或第一列上，那么跳到的位置之后的就不能到了，初始赋值是要赋成0</p>
-<h3 id="AC-CODE-1"><a href="#AC-CODE-1" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> dx[] = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-1</span>};</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> dy[] = {<span class="number">2</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">2</span>};</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">int</span> n, m, x, y;</span><br><span class="line"><span class="type">int</span> f[<span class="number">30</span>][<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; x &gt;&gt; y;</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    n++, m++, x++, y++;</span><br><span class="line">    f[x][y] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (x + dx[i] &lt;= <span class="number">0</span> || x + dx[i] &gt; n || y + dy[i] &lt;= <span class="number">0</span> || y + dy[i] &gt; m)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        f[x + dx[i]][y + dy[i]] = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="type">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (f[i][<span class="number">1</span>] == <span class="number">0</span>)</span><br><span class="line">        {</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (flag)</span><br><span class="line">        {</span><br><span class="line">            f[i][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            f[i][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (f[<span class="number">1</span>][i] == <span class="number">0</span>)</span><br><span class="line">        {</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (flag)</span><br><span class="line">        {</span><br><span class="line">            f[<span class="number">1</span>][i] = <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            f[<span class="number">1</span>][i] = <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span>; j &lt;= m; j++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (f[i][j] == <span class="number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            }</span><br><span class="line">            f[i][j] = f[i - <span class="number">1</span>][j] + f[i][j - <span class="number">1</span>];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="AC-CODE-1"><a href="#AC-CODE-1" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> dx[] = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>};<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> dy[] = {<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>};<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">int</span> n, m, x, y;<br><span class="hljs-type">int</span> f[<span class="hljs-number">30</span>][<span class="hljs-number">30</span>];<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; n &gt;&gt; m &gt;&gt; x &gt;&gt; y;<br>    <span class="hljs-built_in">memset</span>(f, <span class="hljs-number">-1</span>, <span class="hljs-keyword">sizeof</span>(f));<br>    n++, m++, x++, y++;<br>    f[x][y] = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++)<br>    {<br>        <span class="hljs-keyword">if</span> (x + dx[i] &lt;= <span class="hljs-number">0</span> || x + dx[i] &gt; n || y + dy[i] &lt;= <span class="hljs-number">0</span> || y + dy[i] &gt; m)<br>            <span class="hljs-keyword">continue</span>;<br>        f[x + dx[i]][y + dy[i]] = <span class="hljs-number">0</span>;<br>    }<br>    <span class="hljs-type">bool</span> flag = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        <span class="hljs-keyword">if</span> (f[i][<span class="hljs-number">1</span>] == <span class="hljs-number">0</span>)<br>        {<br>            flag = <span class="hljs-number">1</span>;<br>        }<br>        <span class="hljs-keyword">if</span> (flag)<br>        {<br>            f[i][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>        }<br>        <span class="hljs-keyword">else</span><br>            f[i][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    }<br>    flag = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; i++)<br>    {<br>        <span class="hljs-keyword">if</span> (f[<span class="hljs-number">1</span>][i] == <span class="hljs-number">0</span>)<br>        {<br>            flag = <span class="hljs-number">1</span>;<br>        }<br>        <span class="hljs-keyword">if</span> (flag)<br>        {<br>            f[<span class="hljs-number">1</span>][i] = <span class="hljs-number">0</span>;<br>        }<br>        <span class="hljs-keyword">else</span><br>            f[<span class="hljs-number">1</span>][i] = <span class="hljs-number">1</span>;<br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++)<br>    {<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">2</span>; j &lt;= m; j++)<br>        {<br>            <span class="hljs-keyword">if</span> (f[i][j] == <span class="hljs-number">0</span>)<br>            {<br>                <span class="hljs-keyword">continue</span>;<br>            }<br>            f[i][j] = f[i - <span class="hljs-number">1</span>][j] + f[i][j - <span class="hljs-number">1</span>];<br>        }<br>    }<br>    cout &lt;&lt; f[n][m] &lt;&lt; endl;<br>}<br></code></pre></td></tr></table></figure>
 
 <h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B4090">题目传送门</a></p>
 <p>这道题要求帮助到的人尽可能多，所以我们先帮助需要钱数少的人，才能使帮助的人尽可能多</p>
-<h3 id="AC-CODE-2"><a href="#AC-CODE-2" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">510</span>;</span><br><span class="line"><span class="type">int</span> w, n, x[N], ans;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; w &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        cin &gt;&gt; x[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">sort</span>(x + <span class="number">1</span>, x + <span class="number">1</span> + n);</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (w &gt; <span class="number">0</span> &amp;&amp; i &lt;= n)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (w &lt; x[i])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">        w -= x[i];</span><br><span class="line">        ans++;</span><br><span class="line">        i++;</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="AC-CODE-2"><a href="#AC-CODE-2" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">510</span>;<br><span class="hljs-type">int</span> w, n, x[N], ans;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; w &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        cin &gt;&gt; x[i];<br>    }<br>    <span class="hljs-built_in">sort</span>(x + <span class="hljs-number">1</span>, x + <span class="hljs-number">1</span> + n);<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (w &gt; <span class="hljs-number">0</span> &amp;&amp; i &lt;= n)<br>    {<br>        <span class="hljs-keyword">if</span> (w &lt; x[i])<br>        {<br>            <span class="hljs-keyword">break</span>;<br>        }<br>        w -= x[i];<br>        ans++;<br>        i++;<br>    }<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>}<br></code></pre></td></tr></table></figure>
 
 <h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B4006">题目传送门</a></p>
 <p>这道题想要带走物品的总价值更大，很明显是个贪心</p>
 <p>可以先对整个输入的数组进行排序，这样在我们进行双指针操作是只需要比较 <code>a[i]-a[j]</code> 是否 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.269ex;" xmlns="http://www.w3.org/2000/svg" width="3.567ex" height="1.839ex" role="img" focusable="false" viewBox="0 -694 1576.8 813"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="\le k"><g data-mml-node="mo" data-latex="\le"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mi" data-latex="k" transform="translate(1055.8,0)"><path data-c="1D458" d="M409 353C409 327 423 314 450 314C485 314 508 345 508 379C508 418 476 445 437 445C392 445 344 415 291 356C250 311 217 282 190 269L291 679C289 688 287 694 274 694C242 694 166 685 154 684C139 682 132 675 132 660C132 650 141 645 159 645C178 645 204 646 204 632L59 43C56 32 55 25 55 21C55 0 66-11 87-11C104-11 117-3 124 12C129 21 147 92 179 226C231 221 286 196 286 146C286 131 279 101 279 91C279 34 316-11 373-11C431-11 470 41 490 145C490 154 485 159 475 159C466 159 460 152 457 138C435 59 408 19 375 19C357 19 348 33 348 61C348 77 360 131 360 147C360 204 314 239 221 253C244 269 270 292 298 322C326 352 346 371 359 382C386 404 412 415 435 415C445 415 453 413 459 409C432 404 409 379 409 353Z"></path></g></g></g></svg></mjx-container> 然后用一个前缀和数组预处理从1到 i 的数字和，这样就可以 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.561ex;" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.253ex" role="img" focusable="false" viewBox="0 -748 2041 996"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="O(1)"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mn" data-latex="1" transform="translate(1152,0)"><path data-c="31" d="M269 666C228 624 168 603 89 603L89 564C141 564 184 572 217 588L217 82C217 64 213 52 204 47C195 42 170 39 130 39L95 39L95 0C120 2 174 3 257 3C340 3 394 2 419 0L419 39L384 39C343 39 318 42 310 47C302 52 297 64 297 82L297 636C297 660 295 666 269 666Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(1652,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></svg></mjx-container> 的复杂度获得 i 到 j 的区间和</p>
-<h3 id="AC-CODE-3"><a href="#AC-CODE-3" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, k, a[<span class="number">1010</span>], per[<span class="number">1010</span>], ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        per[i] = per[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (a[j] - a[i] &lt;= k)</span><br><span class="line">            {</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, per[j] - per[i - <span class="number">1</span>]);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="AC-CODE-3"><a href="#AC-CODE-3" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n, k, a[<span class="hljs-number">1010</span>], per[<span class="hljs-number">1010</span>], ans;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; n &gt;&gt; k;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        cin &gt;&gt; a[i];<br>    }<br>    <span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        per[i] = per[i - <span class="hljs-number">1</span>] + a[i];<br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt;= n; j++)<br>        {<br>            <span class="hljs-keyword">if</span> (a[j] - a[i] &lt;= k)<br>            {<br>                ans = <span class="hljs-built_in">max</span>(ans, per[j] - per[i - <span class="hljs-number">1</span>]);<br>            }<br>        }<br>    }<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>}<br></code></pre></td></tr></table></figure>
 
 <h2 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/B2141">题目传送门</a></p>
 <p><del>这道题其实也不是很水</del></p>
@@ -236,135 +495,410 @@ mjx-container[display="true"] + br {
 <p>这道题难在如何转十进制</p>
 <p>如果不知道可以去<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/numeral-sys/base/">这里</a>看看</p>
 <p>冷知识：记得开<code>long long</code></p>
-<h3 id="AC-CODE-4"><a href="#AC-CODE-4" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line">string q, p, r;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">turn_bin</span><span class="params">(<span class="type">int</span> b, string a)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> n = a.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    {</span><br><span class="line">        ans += ((a[i] - <span class="string">'0'</span>) * (<span class="type">int</span>)<span class="built_in">pow</span>(b, cnt));</span><br><span class="line">        cnt++;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    cin &gt;&gt; q &gt;&gt; p &gt;&gt; r;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> b = <span class="number">2</span>; b &lt;= <span class="number">16</span>; b++)</span><br><span class="line">    {</span><br><span class="line">        <span class="type">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; q.<span class="built_in">size</span>(); i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (q[i] - <span class="string">'0'</span> &gt;= b)</span><br><span class="line">            {</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; p.<span class="built_in">size</span>(); i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (p[i] - <span class="string">'0'</span> &gt;= b)</span><br><span class="line">            {</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; r.<span class="built_in">size</span>(); i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (r[i] - <span class="string">'0'</span> &gt;= b)</span><br><span class="line">            {</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (flag)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="type">int</span> a = <span class="built_in">turn_bin</span>(b, q);</span><br><span class="line">        <span class="type">int</span> c = <span class="built_in">turn_bin</span>(b, p);</span><br><span class="line">        <span class="type">int</span> d = <span class="built_in">turn_bin</span>(b, r);</span><br><span class="line">        <span class="keyword">if</span> (a * c == d)</span><br><span class="line">        {</span><br><span class="line">            cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="AC-CODE-4"><a href="#AC-CODE-4" class="headerlink" title="AC CODE"></a>AC CODE</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br>string q, p, r;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">turn_bin</span><span class="hljs-params">(<span class="hljs-type">int</span> b, string a)</span></span><br><span class="hljs-function"></span>{<br>    <span class="hljs-type">int</span> n = a.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--)<br>    {<br>        ans += ((a[i] - <span class="hljs-string">'0'</span>) * (<span class="hljs-type">int</span>)<span class="hljs-built_in">pow</span>(b, cnt));<br>        cnt++;<br>    }<br>    <span class="hljs-keyword">return</span> ans;<br>}<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; q &gt;&gt; p &gt;&gt; r;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> b = <span class="hljs-number">2</span>; b &lt;= <span class="hljs-number">16</span>; b++)<br>    {<br>        <span class="hljs-type">bool</span> flag = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; q.<span class="hljs-built_in">size</span>(); i++)<br>        {<br>            <span class="hljs-keyword">if</span> (q[i] - <span class="hljs-string">'0'</span> &gt;= b)<br>            {<br>                flag = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; p.<span class="hljs-built_in">size</span>(); i++)<br>        {<br>            <span class="hljs-keyword">if</span> (p[i] - <span class="hljs-string">'0'</span> &gt;= b)<br>            {<br>                flag = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; r.<span class="hljs-built_in">size</span>(); i++)<br>        {<br>            <span class="hljs-keyword">if</span> (r[i] - <span class="hljs-string">'0'</span> &gt;= b)<br>            {<br>                flag = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            }<br>        }<br>        <span class="hljs-keyword">if</span> (flag)<br>            <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-type">int</span> a = <span class="hljs-built_in">turn_bin</span>(b, q);<br>        <span class="hljs-type">int</span> c = <span class="hljs-built_in">turn_bin</span>(b, p);<br>        <span class="hljs-type">int</span> d = <span class="hljs-built_in">turn_bin</span>(b, r);<br>        <span class="hljs-keyword">if</span> (a * c == d)<br>        {<br>            cout &lt;&lt; b &lt;&lt; endl;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        }<br>    }<br>    cout &lt;&lt; <span class="hljs-number">0</span> &lt;&lt; endl;<br>}<br></code></pre></td></tr></table></figure>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="print-no-link">#学习记录</a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/" data-id="cuidKDp1tVsV8TDdYExQYozI8" data-title="csp-j基本签到题专项训练" class="article-share-link"><span class="fa fa-share">Share</span></a>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>csp-j基本签到题专项训练</div>
+      <div>https://haoga123456.github.io/2026/08/29/csp-j基本签到题专项训练/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>haoga123456</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年8月29日</div>
+        </div>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="tag">学习记录</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2026/08/21/%E7%BA%BF%E6%AE%B5%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">线段树</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="tag">学习记录</a></li></ul>
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
     </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">学习记录</a>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li></ul>
-    </div>
-  </div>
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/08/21/%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="线段树">
+                        <span class="hidden-mobile">线段树</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/">csp-j基本签到题专项训练</a>
-          </li>
-        
-          <li>
-            <a href="/2026/08/21/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
-          </li>
-        
-          <li>
-            <a href="/2026/08/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+            
+          </article>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
