@@ -7835,3 +7835,30 @@ td.hljs-ln-numbers {
 @media(max-width:1200px) {
     .toc {display: none;}
 }
+
+
+/* === 代码块可读性修复（Hexo highlight + Sakura 主题） === */
+.entry-content .highlight,
+.highlight {
+  background: #282c34 !important;
+  color: #d8dee9 !important;
+}
+.entry-content .highlight pre,
+.highlight pre,
+.highlight .code pre {
+  background: transparent !important;
+  color: #d8dee9 !important;
+}
+.highlight .code .line,
+.entry-content .highlight .line {
+  color: #d8dee9;
+}
+.hljs {
+  background: #282c34 !important;
+  color: #d8dee9 !important;
+}
+/* 行内代码：浅黄底 + 深红字 */
+.entry-content code {
+  background: rgba(254,250,199,.5) !important;
+  color: #c0392b !important;
+}
