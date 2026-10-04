@@ -7862,3 +7862,12 @@ td.hljs-ln-numbers {
   background: rgba(254,250,199,.5) !important;
   color: #c0392b !important;
 }
+
+
+/* === 代码块内 <code> 元素覆盖（修复块级代码被行内样式误套） === */
+.entry-content .highlight code,
+.highlight code,
+.highlight code.hljs {
+  background: transparent !important;
+  color: #d8dee9 !important;
+}
