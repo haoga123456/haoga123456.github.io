@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">AT_CODER ABC 478 C 题解 | 算法学习笔记</title>
+  
+    <link rel="shortcut icon" href="/img/favicon.png">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css?v=2" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css?v=2" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "算法学习笔记haoga123456";
+  mashiro_option.author_name = "haoga123456";
+  mashiro_option.site_url = "https://haoga123456.github.io";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "/img/bg/bg-sakura.jpg,/img/bg/bg-code.jpg,/img/bg/bg-algo.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 8.1.2"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://haoga123456.github.io">
+          <img src="/img/avatar.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>记录算法与数学的思考</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://github.com/haoga123456" target="_blank" class="social-github" title="github">
+                    <img src="/images/donate/github.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">算法学习笔记</span>
+            <span class="shironeko">haoga123456</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-home" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-tags" aria-hidden="true"></i>
+                    分类
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/tags">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-tag" aria-hidden="true"></i>
+                    标签
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-user" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">AT_CODER ABC 478 C 题解</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2026-10-5&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h1 id="AT-abc478-c-ABC478C-Sort-Subarray-题解"><a href="#AT-abc478-c-ABC478C-Sort-Subarray-题解" class="headerlink" title="AT_abc478_c [ABC478C] Sort Subarray 题解"></a>AT_abc478_c [ABC478C] Sort Subarray 题解</h1><h2 id="一、题目分析"><a href="#一、题目分析" class="headerlink" title="一、题目分析"></a>一、题目分析</h2><p>给定一个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.993ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 881 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="N"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g></g></g></svg></mjx-container> 的数组 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="A"><g data-mml-node="mi" data-latex="A"><path data-c="1D434" d="M137 3C155 3 217 0 236 0C251 0 258 8 258 23C258 32 252 38 239 39C210 40 196 50 196 69C196 78 205 98 224 128C251 173 270 206 283 228L526 228C526 221 527 207 530 185C537 112 541 72 541 67C541 48 519 39 474 39C455 39 446 31 446 15C446 5 452 0 464 0C488 0 564 3 588 3C608 3 679 0 699 0C714 0 721 8 721 24C721 34 712 39 694 39C666 39 649 41 644 44C639 47 635 56 634 71L574 689C571 708 572 716 551 716C539 716 529 710 522 697L178 120C148 70 108 43 59 39C43 38 35 30 35 15C35 5 41 0 52 0C68 0 121 3 137 3M492 577L522 267L307 267Z"></path></g></g></g></svg></mjx-container>，要求<strong>恰好进行一次操作</strong>：</p>
+<ul>
+<li>选择一个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的连续子数组；</li>
+<li>将这个子数组升序排序。</li>
+</ul>
+<p>问：是否存在一种选择，使得操作结束后整个数组变成非降序排列。</p>
+<hr>
+<h2 id="二、核心思路"><a href="#二、核心思路" class="headerlink" title="二、核心思路"></a>二、核心思路</h2><p>先考虑最终结果。</p>
+<p>如果整个数组最终是升序的，那么它一定等于原数组所有元素排序后的结果。</p>
+<p>因此，我们可以先将原数组复制一份并排序：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n);<br></code></pre></td></tr></table></figure>
+
+<p>此时：</p>
+<ul>
+<li><code>b[i]</code> 表示原数组第 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="i"><g data-mml-node="mi" data-latex="i"><path data-c="1D456" d="M284 621C284 648 271 661 244 661C216 661 188 633 188 605C188 578 202 565 229 565C257 565 284 593 284 621M259 138C237 59 205 19 164 19C151 19 144 28 144 47C144 64 173 150 232 306C240 329 244 347 244 360C244 409 210 445 161 445C118 445 84 420 59 369C39 328 29 301 29 288C29 279 34 275 45 275C58 275 60 281 64 295C87 375 118 415 158 415C171 415 178 406 178 387C178 373 175 357 168 338C145 275 121 208 101 155C86 115 78 88 78 74C78 25 114-11 162-11C205-11 239 14 264 64C283 103 293 130 293 145C293 154 288 159 277 159C274 159 259 150 259 138Z"></path></g></g></g></svg></mjx-container> 个元素；</li>
+<li><code>a[i]</code> 表示整个数组排序后第 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="i"><g data-mml-node="mi" data-latex="i"><path data-c="1D456" d="M284 621C284 648 271 661 244 661C216 661 188 633 188 605C188 578 202 565 229 565C257 565 284 593 284 621M259 138C237 59 205 19 164 19C151 19 144 28 144 47C144 64 173 150 232 306C240 329 244 347 244 360C244 409 210 445 161 445C118 445 84 420 59 369C39 328 29 301 29 288C29 279 34 275 45 275C58 275 60 281 64 295C87 375 118 415 158 415C171 415 178 406 178 387C178 373 175 357 168 338C145 275 121 208 101 155C86 115 78 88 78 74C78 25 114-11 162-11C205-11 239 14 264 64C283 103 293 130 293 145C293 154 288 159 277 159C274 159 259 150 259 138Z"></path></g></g></g></svg></mjx-container> 个元素。</li>
+</ul>
+<p>如果某个位置满足：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">b[i] == a[i]<br></code></pre></td></tr></table></figure>
+
+<p>说明这个位置本来就是正确的，不一定需要通过操作改变。</p>
+<p>我们真正需要处理的是<strong>两端连续的正确部分</strong>。</p>
+<h3 id="为什么只需要看两端？"><a href="#为什么只需要看两端？" class="headerlink" title="为什么只需要看两端？"></a>为什么只需要看两端？</h3><p>假设我们选择区间 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.959ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1749.7 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="[l,r]"><g data-mml-node="mo" data-latex="["><path data-c="5B" d="M233-202L159-202L159 702L233 702C248 702 256 710 256 726C256 742 248 750 233 750L114 750L114-250L233-250C248-250 256-242 256-226C256-214 245-202 233-202Z"></path></g><g data-mml-node="mi" data-latex="l" transform="translate(278,0)"><path data-c="1D459" d="M173 632L49 119C46 105 44 93 44 84C44 31 83-11 136-11C185-11 220 41 241 145C241 154 236 159 225 159C217 159 211 152 208 138C188 59 165 19 138 19C121 19 113 33 113 60C113 75 115 91 119 107L258 679L258 683C255 690 249 694 242 694C210 694 136 685 124 684C109 682 102 674 102 659C102 650 111 645 130 645C147 645 173 645 173 632Z"></path></g><g data-mml-node="mo" data-latex="," transform="translate(576,0)"><path data-c="2C" d="M139 106C107 106 86 82 86 50C86 20 109-5 139-5C153-5 165-1 174 8L175 0C175-63 154-117 112-160C105-168 101-174 101-178C101-188 105-193 114-193C123-193 135-181 152-158C186-110 203-57 203 0C203 53 185 106 139 106Z"></path></g><g data-mml-node="mi" data-latex="r" transform="translate(1020.7,0)"><path data-c="1D45F" d="M436 374C436 416 395 442 351 442C302 442 261 419 227 372C217 411 183 442 136 442C95 442 65 410 44 345C34 312 29 293 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C150 413 159 399 159 371C159 358 154 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 110-11C130-11 143-1 150 19L169 91C180 134 187 162 190 175L221 303C223 311 231 324 244 343C271 381 302 413 351 413C363 413 373 411 382 406C352 397 337 378 337 351C337 325 351 312 378 312C411 312 436 341 436 374Z"></path></g><g data-mml-node="mo" data-latex="]" transform="translate(1471.7,0)"><path data-c="5D" d="M45-250L164-250L164 750L45 750C30 750 22 742 22 726C22 710 30 702 45 702L119 702L119-202L45-202C30-202 22-210 22-226C22-242 30-250 45-250Z"></path></g></g></g></svg></mjx-container>，其中：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.188ex;" xmlns="http://www.w3.org/2000/svg" width="13.386ex" height="1.758ex" role="img" focusable="false" viewBox="0 -694 5916.4 777"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+r-l+1=K
+"><g data-mml-node="mi" data-latex="r"><path data-c="1D45F" d="M436 374C436 416 395 442 351 442C302 442 261 419 227 372C217 411 183 442 136 442C95 442 65 410 44 345C34 312 29 293 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C150 413 159 399 159 371C159 358 154 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 110-11C130-11 143-1 150 19L169 91C180 134 187 162 190 175L221 303C223 311 231 324 244 343C271 381 302 413 351 413C363 413 373 411 382 406C352 397 337 378 337 351C337 325 351 312 378 312C411 312 436 341 436 374Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(673.2,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="l" transform="translate(1673.4,0)"><path data-c="1D459" d="M173 632L49 119C46 105 44 93 44 84C44 31 83-11 136-11C185-11 220 41 241 145C241 154 236 159 225 159C217 159 211 152 208 138C188 59 165 19 138 19C121 19 113 33 113 60C113 75 115 91 119 107L258 679L258 683C255 690 249 694 242 694C210 694 136 685 124 684C109 682 102 674 102 659C102 650 111 645 130 645C147 645 173 645 173 632Z"></path></g><g data-mml-node="mo" data-latex="+" transform="translate(2193.7,0)"><path data-c="2B" d="M698 274L413 274L413 559C413 575 405 583 389 583C373 583 365 575 365 559L365 274L80 274C64 274 56 266 56 250C56 234 64 226 80 226L365 226L365-59C365-75 373-83 389-83C405-83 413-75 413-59L413 226L698 226C714 226 722 234 722 250C722 263 711 274 698 274Z"></path></g><g data-mml-node="mn" data-latex="1" transform="translate(3193.9,0)"><path data-c="31" d="M269 666C228 624 168 603 89 603L89 564C141 564 184 572 217 588L217 82C217 64 213 52 204 47C195 42 170 39 130 39L95 39L95 0C120 2 174 3 257 3C340 3 394 2 419 0L419 39L384 39C343 39 318 42 310 47C302 52 297 64 297 82L297 636C297 660 295 666 269 666Z"></path></g><g data-mml-node="mo" data-latex="=" transform="translate(3971.7,0)"><path data-c="3D" d="M698 367L80 367C64 367 56 359 56 344C56 329 64 321 80 321L698 321C714 321 722 329 722 344C722 356 711 367 698 367M698 179L80 179C64 179 56 171 56 156C56 141 64 133 80 133L698 133C714 133 722 141 722 156C722 169 711 179 698 179Z"></path></g><g data-mml-node="mi" data-latex="K" transform="translate(5027.4,0)"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container></p>
+<p>进行排序。</p>
+<p>区间外的元素完全不会发生变化。</p>
+<p>而最终数组必须是整体有序的，所以：</p>
+<ul>
+<li>在区间左边的部分必须已经和最终有序数组一致；</li>
+<li>在区间右边的部分也必须已经和最终有序数组一致。</li>
+</ul>
+<p>因此，真正可能发生变化的位置必须被这个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的区间覆盖。</p>
+<p>换句话说，如果：</p>
+<ul>
+<li>从左边开始，有 <code>L</code> 个位置已经和排序后的数组完全相同；</li>
+<li>从右边开始，有 <code>R</code> 个位置已经和排序后的数组完全相同；</li>
+</ul>
+<p>那么中间剩余的部分长度为：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.188ex;" xmlns="http://www.w3.org/2000/svg" width="10.783ex" height="1.735ex" role="img" focusable="false" viewBox="0 -684 4765.9 767"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+N-L-R
+"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(1103.2,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="L" transform="translate(2103.4,0)"><path data-c="1D43F" d="M520 667C520 678 513 683 500 683L354 680L223 683C208 684 200 676 200 659C200 652 203 647 209 646C218 645 226 644 231 644C262 643 279 641 284 640C289 639 292 636 292 631C292 629 291 623 288 613L156 82C150 60 140 47 125 42C119 40 101 39 70 39C49 39 39 31 39 15C39 5 49 0 70 0L527 0C552 0 554 0 561 19L639 233C642 240 643 245 643 248C643 258 638 263 627 263C617 263 612 254 607 240C588 191 570 154 555 131C518 75 455 39 363 39L270 39C259 39 252 39 249 40C242 40 239 42 239 45C239 47 241 54 244 67L377 601C383 624 396 637 415 642C421 643 442 644 478 644C506 644 520 644 520 667Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(3006.7,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="R" transform="translate(4006.9,0)"><path data-c="1D445" d="M739 531C739 582 713 621 662 649C621 672 572 683 517 683L235 683C212 683 202 682 202 659C202 652 205 647 211 646C221 645 229 644 234 644C264 643 281 641 286 640C291 639 294 636 294 631C294 629 293 623 290 613L158 82C153 60 143 46 128 41C121 39 103 38 72 38C50 38 41 37 41 15C41 4 47-1 59 0L183 3L309 0C325-1 333 8 333 23C333 33 322 38 301 38C261 38 241 43 241 52C241 52 242 54 244 68L308 327L423 327C492 327 527 298 527 241C527 232 522 210 513 174C502 132 497 104 497 89C497 13 556-22 632-22C660-22 687-9 714 16C741 41 755 68 755 96C755 106 750 111 739 111C732 111 726 106 723 95C712 64 698 41 682 28C666 15 651 8 636 8C613 8 601 27 601 64C601 88 604 125 611 176C614 197 615 212 615 223C615 276 587 315 531 339C625 362 739 429 739 531M609 616C629 603 639 581 639 550C639 530 635 507 626 480C599 398 531 357 422 357L316 357L379 610C384 631 392 642 403 643C408 644 428 644 463 644C528 644 566 642 609 616Z"></path></g></g></g></svg></mjx-container></p>
+<p>只要这部分长度不超过 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container>，就可以用一个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的区间覆盖它们。</p>
+<p>因此判断条件就是：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.269ex;" xmlns="http://www.w3.org/2000/svg" width="15.811ex" height="1.817ex" role="img" focusable="false" viewBox="0 -684 6988.4 803"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+N-L-R\le K
+"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(1103.2,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="L" transform="translate(2103.4,0)"><path data-c="1D43F" d="M520 667C520 678 513 683 500 683L354 680L223 683C208 684 200 676 200 659C200 652 203 647 209 646C218 645 226 644 231 644C262 643 279 641 284 640C289 639 292 636 292 631C292 629 291 623 288 613L156 82C150 60 140 47 125 42C119 40 101 39 70 39C49 39 39 31 39 15C39 5 49 0 70 0L527 0C552 0 554 0 561 19L639 233C642 240 643 245 643 248C643 258 638 263 627 263C617 263 612 254 607 240C588 191 570 154 555 131C518 75 455 39 363 39L270 39C259 39 252 39 249 40C242 40 239 42 239 45C239 47 241 54 244 67L377 601C383 624 396 637 415 642C421 643 442 644 478 644C506 644 520 644 520 667Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(3006.7,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="R" transform="translate(4006.9,0)"><path data-c="1D445" d="M739 531C739 582 713 621 662 649C621 672 572 683 517 683L235 683C212 683 202 682 202 659C202 652 205 647 211 646C221 645 229 644 234 644C264 643 281 641 286 640C291 639 294 636 294 631C294 629 293 623 290 613L158 82C153 60 143 46 128 41C121 39 103 38 72 38C50 38 41 37 41 15C41 4 47-1 59 0L183 3L309 0C325-1 333 8 333 23C333 33 322 38 301 38C261 38 241 43 241 52C241 52 242 54 244 68L308 327L423 327C492 327 527 298 527 241C527 232 522 210 513 174C502 132 497 104 497 89C497 13 556-22 632-22C660-22 687-9 714 16C741 41 755 68 755 96C755 106 750 111 739 111C732 111 726 106 723 95C712 64 698 41 682 28C666 15 651 8 636 8C613 8 601 27 601 64C601 88 604 125 611 176C614 197 615 212 615 223C615 276 587 315 531 339C625 362 739 429 739 531M609 616C629 603 639 581 639 550C639 530 635 507 626 480C599 398 531 357 422 357L316 357L379 610C384 631 392 642 403 643C408 644 428 644 463 644C528 644 566 642 609 616Z"></path></g><g data-mml-node="mo" data-latex="\le" transform="translate(5043.7,0)"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mi" data-latex="K" transform="translate(6099.4,0)"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container></p>
+<hr>
+<h2 id="三、如何计算两端相同的位置？"><a href="#三、如何计算两端相同的位置？" class="headerlink" title="三、如何计算两端相同的位置？"></a>三、如何计算两端相同的位置？</h2><p>从左往右比较：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>{<br>    <span class="hljs-keyword">if</span> (b[i] != a[i])<br>        <span class="hljs-keyword">break</span>;<br>    cnt++;<br>}<br></code></pre></td></tr></table></figure>
+
+<p>这里得到的是最长的前缀长度 <code>L</code>。</p>
+<p>例如：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">原数组：  1 2 3 5 4 6<br>排序后：  1 2 3 4 5 6<br></code></pre></td></tr></table></figure>
+
+<p>从左边开始：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">1 = 1<br>2 = 2<br>3 = 3<br></code></pre></td></tr></table></figure>
+
+<p>所以：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">L = 3<br></code></pre></td></tr></table></figure>
+
+<p>然后再从右往左比较：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n; i &gt;= <span class="hljs-number">1</span>; i--)<br>{<br>    <span class="hljs-keyword">if</span> (b[i] != a[i])<br>        <span class="hljs-keyword">break</span>;<br>    cnt++;<br>}<br></code></pre></td></tr></table></figure>
+
+<p>得到最长的后缀长度 <code>R</code>。</p>
+<p>这里直接让 <code>cnt</code> 累加，因此：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">cnt = L + R<br></code></pre></td></tr></table></figure>
+
+<p>如果中间部分长度不超过 (K)，就说明可以选择一个长度为 (K) 的区间覆盖它们。</p>
+<p>于是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> (n - cnt &lt;= k)<br>    cout &lt;&lt; <span class="hljs-string">"Yes"</span> &lt;&lt; endl;<br><span class="hljs-keyword">else</span><br>    cout &lt;&lt; <span class="hljs-string">"No"</span> &lt;&lt; endl;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、正确性证明"><a href="#四、正确性证明" class="headerlink" title="四、正确性证明"></a>四、正确性证明</h2><p>设排序后的数组为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="B"><g data-mml-node="mi" data-latex="B"><path data-c="1D435" d="M756 543C756 634 666 683 568 683L236 683C213 683 203 682 203 659C203 643 223 644 235 644C265 643 283 641 288 640C293 639 295 636 295 631C295 629 294 623 291 613L159 82C154 60 144 47 129 42C122 40 104 39 73 39C52 39 42 31 42 15C42 5 52 0 73 0L426 0C491 0 551 20 608 59C671 102 703 155 703 217C703 296 638 344 567 358C655 379 756 446 756 543M554 644C623 644 658 612 658 547C658 496 638 454 596 420C554 386 507 370 456 370L317 370L377 610C385 644 385 644 427 644M582 299C596 276 603 253 603 228C603 176 583 131 542 94C501 57 455 39 402 39L267 39C257 39 250 39 246 40C240 40 237 42 237 45C237 46 237 49 238 53C269 180 293 276 309 340L493 340C536 340 565 326 582 299Z"></path></g></g></g></svg></mjx-container>。</p>
+<h3 id="情况-1：可以完成排序"><a href="#情况-1：可以完成排序" class="headerlink" title="情况 1：可以完成排序"></a>情况 1：可以完成排序</h3><p>假设存在一个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的区间进行排序后，可以使整个数组变成 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="B"><g data-mml-node="mi" data-latex="B"><path data-c="1D435" d="M756 543C756 634 666 683 568 683L236 683C213 683 203 682 203 659C203 643 223 644 235 644C265 643 283 641 288 640C293 639 295 636 295 631C295 629 294 623 291 613L159 82C154 60 144 47 129 42C122 40 104 39 73 39C52 39 42 31 42 15C42 5 52 0 73 0L426 0C491 0 551 20 608 59C671 102 703 155 703 217C703 296 638 344 567 358C655 379 756 446 756 543M554 644C623 644 658 612 658 547C658 496 638 454 596 420C554 386 507 370 456 370L317 370L377 610C385 644 385 644 427 644M582 299C596 276 603 253 603 228C603 176 583 131 542 94C501 57 455 39 402 39L267 39C257 39 250 39 246 40C240 40 237 42 237 45C237 46 237 49 238 53C269 180 293 276 309 340L493 340C536 340 565 326 582 299Z"></path></g></g></g></svg></mjx-container>。</p>
+<p>由于区间外的元素不会发生变化，所以区间外的元素原本就必须与 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="B"><g data-mml-node="mi" data-latex="B"><path data-c="1D435" d="M756 543C756 634 666 683 568 683L236 683C213 683 203 682 203 659C203 643 223 644 235 644C265 643 283 641 288 640C293 639 295 636 295 631C295 629 294 623 291 613L159 82C154 60 144 47 129 42C122 40 104 39 73 39C52 39 42 31 42 15C42 5 52 0 73 0L426 0C491 0 551 20 608 59C671 102 703 155 703 217C703 296 638 344 567 358C655 379 756 446 756 543M554 644C623 644 658 612 658 547C658 496 638 454 596 420C554 386 507 370 456 370L317 370L377 610C385 644 385 644 427 644M582 299C596 276 603 253 603 228C603 176 583 131 542 94C501 57 455 39 402 39L267 39C257 39 250 39 246 40C240 40 237 42 237 45C237 46 237 49 238 53C269 180 293 276 309 340L493 340C536 340 565 326 582 299Z"></path></g></g></g></svg></mjx-container> 对应位置相同。</p>
+<p>因此，所有不满足：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="7.911ex" height="1.977ex" role="img" focusable="false" viewBox="0 -716 3496.5 873.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+A_i=B_i
+"><g data-mml-node="msub" data-latex="A_i"><g data-mml-node="mi" data-latex="A"><path data-c="1D434" d="M137 3C155 3 217 0 236 0C251 0 258 8 258 23C258 32 252 38 239 39C210 40 196 50 196 69C196 78 205 98 224 128C251 173 270 206 283 228L526 228C526 221 527 207 530 185C537 112 541 72 541 67C541 48 519 39 474 39C455 39 446 31 446 15C446 5 452 0 464 0C488 0 564 3 588 3C608 3 679 0 699 0C714 0 721 8 721 24C721 34 712 39 694 39C666 39 649 41 644 44C639 47 635 56 634 71L574 689C571 708 572 716 551 716C539 716 529 710 522 697L178 120C148 70 108 43 59 39C43 38 35 30 35 15C35 5 41 0 52 0C68 0 121 3 137 3M492 577L522 267L307 267Z"></path></g><g data-mml-node="mi" transform="translate(783,-150) scale(0.707)" data-latex="i"><path data-c="1D456" d="M284 621C284 648 271 661 244 661C216 661 188 633 188 605C188 578 202 565 229 565C257 565 284 593 284 621M259 138C237 59 205 19 164 19C151 19 144 28 144 47C144 64 173 150 232 306C240 329 244 347 244 360C244 409 210 445 161 445C118 445 84 420 59 369C39 328 29 301 29 288C29 279 34 275 45 275C58 275 60 281 64 295C87 375 118 415 158 415C171 415 178 406 178 387C178 373 175 357 168 338C145 275 121 208 101 155C86 115 78 88 78 74C78 25 114-11 162-11C205-11 239 14 264 64C283 103 293 130 293 145C293 154 288 159 277 159C274 159 259 150 259 138Z"></path></g></g><g data-mml-node="mo" data-latex="=" transform="translate(1354.7,0)"><path data-c="3D" d="M698 367L80 367C64 367 56 359 56 344C56 329 64 321 80 321L698 321C714 321 722 329 722 344C722 356 711 367 698 367M698 179L80 179C64 179 56 171 56 156C56 141 64 133 80 133L698 133C714 133 722 141 722 156C722 169 711 179 698 179Z"></path></g><g data-mml-node="msub" data-latex="B_i" transform="translate(2410.5,0)"><g data-mml-node="mi" data-latex="B"><path data-c="1D435" d="M756 543C756 634 666 683 568 683L236 683C213 683 203 682 203 659C203 643 223 644 235 644C265 643 283 641 288 640C293 639 295 636 295 631C295 629 294 623 291 613L159 82C154 60 144 47 129 42C122 40 104 39 73 39C52 39 42 31 42 15C42 5 52 0 73 0L426 0C491 0 551 20 608 59C671 102 703 155 703 217C703 296 638 344 567 358C655 379 756 446 756 543M554 644C623 644 658 612 658 547C658 496 638 454 596 420C554 386 507 370 456 370L317 370L377 610C385 644 385 644 427 644M582 299C596 276 603 253 603 228C603 176 583 131 542 94C501 57 455 39 402 39L267 39C257 39 250 39 246 40C240 40 237 42 237 45C237 46 237 49 238 53C269 180 293 276 309 340L493 340C536 340 565 326 582 299Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)" data-latex="i"><path data-c="1D456" d="M284 621C284 648 271 661 244 661C216 661 188 633 188 605C188 578 202 565 229 565C257 565 284 593 284 621M259 138C237 59 205 19 164 19C151 19 144 28 144 47C144 64 173 150 232 306C240 329 244 347 244 360C244 409 210 445 161 445C118 445 84 420 59 369C39 328 29 301 29 288C29 279 34 275 45 275C58 275 60 281 64 295C87 375 118 415 158 415C171 415 178 406 178 387C178 373 175 357 168 338C145 275 121 208 101 155C86 115 78 88 78 74C78 25 114-11 162-11C205-11 239 14 264 64C283 103 293 130 293 145C293 154 288 159 277 159C274 159 259 150 259 138Z"></path></g></g></g></g></svg></mjx-container></p>
+<p>的位置都必须位于这个长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的区间中。</p>
+<p>而所有不匹配的位置必然位于：</p>
+<ul>
+<li>最长匹配前缀之后；</li>
+<li>最长匹配后缀之前。</li>
+</ul>
+<p>所以中间不匹配部分的长度必须满足：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.269ex;" xmlns="http://www.w3.org/2000/svg" width="15.811ex" height="1.817ex" role="img" focusable="false" viewBox="0 -684 6988.4 803"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+N-L-R \le K
+"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(1103.2,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="L" transform="translate(2103.4,0)"><path data-c="1D43F" d="M520 667C520 678 513 683 500 683L354 680L223 683C208 684 200 676 200 659C200 652 203 647 209 646C218 645 226 644 231 644C262 643 279 641 284 640C289 639 292 636 292 631C292 629 291 623 288 613L156 82C150 60 140 47 125 42C119 40 101 39 70 39C49 39 39 31 39 15C39 5 49 0 70 0L527 0C552 0 554 0 561 19L639 233C642 240 643 245 643 248C643 258 638 263 627 263C617 263 612 254 607 240C588 191 570 154 555 131C518 75 455 39 363 39L270 39C259 39 252 39 249 40C242 40 239 42 239 45C239 47 241 54 244 67L377 601C383 624 396 637 415 642C421 643 442 644 478 644C506 644 520 644 520 667Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(3006.7,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="R" transform="translate(4006.9,0)"><path data-c="1D445" d="M739 531C739 582 713 621 662 649C621 672 572 683 517 683L235 683C212 683 202 682 202 659C202 652 205 647 211 646C221 645 229 644 234 644C264 643 281 641 286 640C291 639 294 636 294 631C294 629 293 623 290 613L158 82C153 60 143 46 128 41C121 39 103 38 72 38C50 38 41 37 41 15C41 4 47-1 59 0L183 3L309 0C325-1 333 8 333 23C333 33 322 38 301 38C261 38 241 43 241 52C241 52 242 54 244 68L308 327L423 327C492 327 527 298 527 241C527 232 522 210 513 174C502 132 497 104 497 89C497 13 556-22 632-22C660-22 687-9 714 16C741 41 755 68 755 96C755 106 750 111 739 111C732 111 726 106 723 95C712 64 698 41 682 28C666 15 651 8 636 8C613 8 601 27 601 64C601 88 604 125 611 176C614 197 615 212 615 223C615 276 587 315 531 339C625 362 739 429 739 531M609 616C629 603 639 581 639 550C639 530 635 507 626 480C599 398 531 357 422 357L316 357L379 610C384 631 392 642 403 643C408 644 428 644 463 644C528 644 566 642 609 616Z"></path></g><g data-mml-node="mo" data-latex="\le" transform="translate(5043.7,0)"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mi" data-latex="K" transform="translate(6099.4,0)"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container></p>
+<p>程序会输出 <code>Yes</code>。</p>
+<hr>
+<h3 id="情况-2：-N-L-R-le-K"><a href="#情况-2：-N-L-R-le-K" class="headerlink" title="情况 2：$N-L-R \le K$"></a>情况 2：<mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="1.993ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 881 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="N-L-R \le K"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g></g></g></svg><mjx-break size="3"> </mjx-break><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.804ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1681.2 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="N-L-R \le K"><g data-mml-node="mo" data-latex="-"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="L" transform="translate(1000.2,0)"><path data-c="1D43F" d="M520 667C520 678 513 683 500 683L354 680L223 683C208 684 200 676 200 659C200 652 203 647 209 646C218 645 226 644 231 644C262 643 279 641 284 640C289 639 292 636 292 631C292 629 291 623 288 613L156 82C150 60 140 47 125 42C119 40 101 39 70 39C49 39 39 31 39 15C39 5 49 0 70 0L527 0C552 0 554 0 561 19L639 233C642 240 643 245 643 248C643 258 638 263 627 263C617 263 612 254 607 240C588 191 570 154 555 131C518 75 455 39 363 39L270 39C259 39 252 39 249 40C242 40 239 42 239 45C239 47 241 54 244 67L377 601C383 624 396 637 415 642C421 643 442 644 478 644C506 644 520 644 520 667Z"></path></g></g></g></svg><mjx-break size="3"> </mjx-break><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.98ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1759.2 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="N-L-R \le K"><g data-mml-node="mo" data-latex="-"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mi" data-latex="R" transform="translate(1000.2,0)"><path data-c="1D445" d="M739 531C739 582 713 621 662 649C621 672 572 683 517 683L235 683C212 683 202 682 202 659C202 652 205 647 211 646C221 645 229 644 234 644C264 643 281 641 286 640C291 639 294 636 294 631C294 629 293 623 290 613L158 82C153 60 143 46 128 41C121 39 103 38 72 38C50 38 41 37 41 15C41 4 47-1 59 0L183 3L309 0C325-1 333 8 333 23C333 33 322 38 301 38C261 38 241 43 241 52C241 52 242 54 244 68L308 327L423 327C492 327 527 298 527 241C527 232 522 210 513 174C502 132 497 104 497 89C497 13 556-22 632-22C660-22 687-9 714 16C741 41 755 68 755 96C755 106 750 111 739 111C732 111 726 106 723 95C712 64 698 41 682 28C666 15 651 8 636 8C613 8 601 27 601 64C601 88 604 125 611 176C614 197 615 212 615 223C615 276 587 315 531 339C625 362 739 429 739 531M609 616C629 603 639 581 639 550C639 530 635 507 626 480C599 398 531 357 422 357L316 357L379 610C384 631 392 642 403 643C408 644 428 644 463 644C528 644 566 642 609 616Z"></path></g></g></g></svg><mjx-break size="4"> </mjx-break><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.4ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1944.8 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="N-L-R \le K"><g data-mml-node="mo" data-latex="\le"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mi" data-latex="K" transform="translate(1055.8,0)"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container></h3><p>此时所有不匹配的位置都集中在一个长度不超过 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的连续区间中。</p>
+<p>我们可以选择一个长度恰好为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的区间，使其覆盖这部分位置。</p>
+<p>由于该区间中的所有元素正好是最终需要放入这些位置的元素集合，对这个区间进行升序排序后，可以得到最终数组对应的有序部分。</p>
+<p>区间外的元素本来就已经和最终排序结果一致，因此整个数组最终可以变成升序排列。</p>
+<p>所以程序输出 <code>Yes</code> 是正确的。</p>
+<hr>
+<h2 id="五、代码实现"><a href="#五、代码实现" class="headerlink" title="五、代码实现"></a>五、代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">2e5</span> + <span class="hljs-number">10</span>;<br><br><span class="hljs-type">int</span> n, k;<br><span class="hljs-type">int</span> a[N], b[N];<br><span class="hljs-type">int</span> cnt;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    cin &gt;&gt; n &gt;&gt; k;<br><br>    <span class="hljs-comment">// b 保存原数组</span><br>    <span class="hljs-comment">// a 用来保存排序后的数组</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        cin &gt;&gt; a[i];<br>        b[i] = a[i];<br>    }<br><br>    <span class="hljs-comment">// 得到最终应该达到的有序数组</span><br>    <span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n);<br><br>    <span class="hljs-comment">// 统计从左边开始，有多少个位置已经正确</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    {<br>        <span class="hljs-keyword">if</span> (b[i] != a[i])<br>            <span class="hljs-keyword">break</span>;<br><br>        cnt++;<br>    }<br><br>    <span class="hljs-comment">// 统计从右边开始，有多少个位置已经正确</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = n; i &gt;= <span class="hljs-number">1</span>; i--)<br>    {<br>        <span class="hljs-keyword">if</span> (b[i] != a[i])<br>            <span class="hljs-keyword">break</span>;<br><br>        cnt++;<br>    }<br><br>    <span class="hljs-comment">// 剩余不正确的部分长度不能超过 K</span><br>    <span class="hljs-keyword">if</span> (n - cnt &lt;= k)<br>        cout &lt;&lt; <span class="hljs-string">"Yes"</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">else</span><br>        cout &lt;&lt; <span class="hljs-string">"No"</span> &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure>
+
+<h2 id="六、复杂度分析"><a href="#六、复杂度分析" class="headerlink" title="六、复杂度分析"></a>六、复杂度分析</h2><p>排序是整个算法的主要部分：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.561ex;" xmlns="http://www.w3.org/2000/svg" width="11.118ex" height="2.253ex" role="img" focusable="false" viewBox="0 -748 4914.3 996"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+O(N\log N)
+"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="N" transform="translate(1152,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mi" data-latex="\log" transform="translate(2199.7,0)"><path data-c="6C" d="M144 3L255 0L255 39C219 39 197 40 190 44C183 48 180 60 180 79L180 694L33 683L33 645C68 645 90 642 97 636C104 630 108 616 108 593L108 79C108 60 105 48 98 44C91 40 69 39 33 39L33 0Z"></path><path data-c="6F" d="M249-11C311-11 363 11 406 55C449 99 471 152 471 214C471 277 450 332 408 378C366 424 313 448 250 448C187 448 135 424 92 378C49 332 28 277 28 214C28 152 49 99 92 55C135 11 188-11 249-11M250 21C202 21 166 42 141 85C125 113 117 159 117 222C117 283 125 327 140 355C164 398 200 419 249 419C296 419 332 398 357 357C374 329 382 284 382 222C382 106 348 21 250 21Z" transform="translate(278,0)"></path><path data-c="67" d="M431 453C393 453 358 438 326 408C296 431 262 442 223 442C137 442 59 378 59 294C59 252 74 218 104 192C85 168 75 141 75 110C75 72 88 43 113 24C71 10 28-26 28-77C28-120 56-154 111-178C153-197 199-206 249-206C300-206 347-197 389-178C444-154 471-120 471-75C471-22 449 17 405 42C359 67 308 70 234 70C190 70 166 70 161 71C133 75 113 102 113 133C113 148 117 162 126 174C154 155 186 145 223 145C309 145 386 209 386 293C386 332 373 364 347 389C372 412 399 423 428 423C423 418 420 410 420 400C420 378 431 367 453 367C474 367 485 378 485 401C485 432 461 453 431 453M223 411C277 411 304 372 304 294C304 215 277 175 223 175C168 175 141 214 141 293C141 372 168 411 223 411M164 4L222 4C274 4 316 1 348-6C391-15 412-39 412-77C412-109 392-134 352-153C321-168 287-175 250-175C214-175 180-168 148-153C107-134 87-109 87-77C87-35 123 4 164 4Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(3477.7,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" data-latex="N" transform="translate(3644.3,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(4525.3,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></svg></mjx-container></p>
+<p>左右各扫描一次：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -0.561ex;" xmlns="http://www.w3.org/2000/svg" width="5.48ex" height="2.253ex" role="img" focusable="false" viewBox="0 -748 2422 996"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+O(N)
+"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="N" transform="translate(1152,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(2033,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></svg></mjx-container></p>
+<p>所以总时间复杂度为：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -1.165ex;" xmlns="http://www.w3.org/2000/svg" width="12.327ex" height="3.462ex" role="img" focusable="false" viewBox="0 -1015 5448.3 1530"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+\boxed{O(N\log N)}
+"><g data-mml-node="menclose" data-latex="\fbox{$\displaystyle{O(N\log N)}$}"><g transform="translate(267, 0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-latex="\displaystyle{O(N\log N)}" data-mjx-texclass="ORD"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="N" transform="translate(1152,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mi" data-latex="\log" transform="translate(2199.7,0)"><path data-c="6C" d="M144 3L255 0L255 39C219 39 197 40 190 44C183 48 180 60 180 79L180 694L33 683L33 645C68 645 90 642 97 636C104 630 108 616 108 593L108 79C108 60 105 48 98 44C91 40 69 39 33 39L33 0Z"></path><path data-c="6F" d="M249-11C311-11 363 11 406 55C449 99 471 152 471 214C471 277 450 332 408 378C366 424 313 448 250 448C187 448 135 424 92 378C49 332 28 277 28 214C28 152 49 99 92 55C135 11 188-11 249-11M250 21C202 21 166 42 141 85C125 113 117 159 117 222C117 283 125 327 140 355C164 398 200 419 249 419C296 419 332 398 357 357C374 329 382 284 382 222C382 106 348 21 250 21Z" transform="translate(278,0)"></path><path data-c="67" d="M431 453C393 453 358 438 326 408C296 431 262 442 223 442C137 442 59 378 59 294C59 252 74 218 104 192C85 168 75 141 75 110C75 72 88 43 113 24C71 10 28-26 28-77C28-120 56-154 111-178C153-197 199-206 249-206C300-206 347-197 389-178C444-154 471-120 471-75C471-22 449 17 405 42C359 67 308 70 234 70C190 70 166 70 161 71C133 75 113 102 113 133C113 148 117 162 126 174C154 155 186 145 223 145C309 145 386 209 386 293C386 332 373 364 347 389C372 412 399 423 428 423C423 418 420 410 420 400C420 378 431 367 453 367C474 367 485 378 485 401C485 432 461 453 431 453M223 411C277 411 304 372 304 294C304 215 277 175 223 175C168 175 141 214 141 293C141 372 168 411 223 411M164 4L222 4C274 4 316 1 348-6C391-15 412-39 412-77C412-109 392-134 352-153C321-168 287-175 250-175C214-175 180-168 148-153C107-134 87-109 87-77C87-35 123 4 164 4Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(3477.7,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" data-latex="N" transform="translate(3644.3,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(4525.3,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></g><rect x="33.5" y="-481.5" width="5381.3" height="1463" fill="none" stroke-width="67"></rect></g></g></g></svg></mjx-container></p>
+<p>空间复杂度：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -1.165ex;" xmlns="http://www.w3.org/2000/svg" width="6.688ex" height="3.462ex" role="img" focusable="false" viewBox="0 -1015 2956 1530"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+\boxed{O(N)}
+"><g data-mml-node="menclose" data-latex="\fbox{$\displaystyle{O(N)}$}"><g transform="translate(267, 0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-latex="\displaystyle{O(N)}" data-mjx-texclass="ORD"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="N" transform="translate(1152,0)"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(2033,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></g><rect x="33.5" y="-481.5" width="2889" height="1463" fill="none" stroke-width="67"></rect></g></g></g></svg></mjx-container></p>
+<p>用于保存原数组和排序后的数组。</p>
+<hr>
+<h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><p>这道题的关键并不是模拟「选择哪个区间进行排序」，因为直接枚举区间会产生 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.561ex;" xmlns="http://www.w3.org/2000/svg" width="6.589ex" height="2.448ex" role="img" focusable="false" viewBox="0 -833.9 2912.5 1081.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="O(N^2)"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="msup" data-latex="N^2" transform="translate(1152,0)"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mn" transform="translate(967.9,363) scale(0.707)" data-latex="2"><path data-c="32" d="M237 666C186 666 143 648 106 612C69 576 50 534 50 483C50 449 75 424 106 424C136 424 161 450 161 480C161 513 137 536 105 536C102 536 100 536 98 535C117 584 161 627 224 627C306 627 352 556 352 470C352 403 318 331 250 255L62 43C49 28 50 29 50 0L421 0L450 180L417 180C409 129 402 100 396 91C391 86 361 84 306 84L139 84L236 179C304 243 390 312 419 365C439 400 449 435 449 470C449 588 357 666 237 666Z"></path></g></g><g data-mml-node="mo" data-latex=")" transform="translate(2523.5,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></svg></mjx-container> 的复杂度。</p>
+<p>真正关键的是：</p>
+<ol>
+<li>最终结果一定是整个数组排序后的结果。</li>
+<li>被选择区间之外的元素不能改变，因此这些位置必须已经正确。</li>
+<li>找出最长的正确前缀和正确后缀。</li>
+<li>如果中间错误部分的长度不超过 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container>，就可以用一次长度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.011ex" height="1.548ex" role="img" focusable="false" viewBox="0 -684 889 684"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="K"><g data-mml-node="mi" data-latex="K"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></svg></mjx-container> 的排序覆盖它。</li>
+</ol>
+<p>最终只需要判断：</p>
+<p><mjx-container class="MathJax" jax="SVG" overflow="overflow" display="true"><svg style="vertical-align: -1.165ex;" xmlns="http://www.w3.org/2000/svg" width="18.779ex" height="3.462ex" role="img" focusable="false" viewBox="0 -1015 8300.4 1530"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="
+\boxed{N-(L+R)\le K}
+"><g data-mml-node="menclose" data-latex="\fbox{$\displaystyle{N-(L+R)\le K}$}"><g transform="translate(267, 0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-latex="\displaystyle{N-(L+R)\le K}" data-mjx-texclass="ORD"><g data-mml-node="mi" data-latex="N"><path data-c="1D441" d="M864 683C845 683 783 680 764 680C745 680 682 683 663 683C648 683 641 675 641 659C641 650 648 645 663 644C705 644 726 631 726 605C726 599 725 592 724 585L616 157L401 662C393 681 391 683 366 683L233 683C209 683 200 681 200 659C200 649 211 644 232 644C274 644 295 643 296 640L163 110C154 71 131 49 95 42C69 39 39 43 39 15C39 5 45 0 56 0C74 0 136 3 155 3C174 3 238 0 257 0C272 0 279 8 279 24C279 33 271 38 255 39C214 40 194 53 194 78C194 83 195 90 197 100L326 611L576 21C582 7 590 0 599 0C608 0 614 8 618 24L757 574C770 625 798 643 860 644C874 645 881 653 881 669C878 678 877 683 864 683Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(1103.2,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(2103.4,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="L" transform="translate(2492.4,0)"><path data-c="1D43F" d="M520 667C520 678 513 683 500 683L354 680L223 683C208 684 200 676 200 659C200 652 203 647 209 646C218 645 226 644 231 644C262 643 279 641 284 640C289 639 292 636 292 631C292 629 291 623 288 613L156 82C150 60 140 47 125 42C119 40 101 39 70 39C49 39 39 31 39 15C39 5 49 0 70 0L527 0C552 0 554 0 561 19L639 233C642 240 643 245 643 248C643 258 638 263 627 263C617 263 612 254 607 240C588 191 570 154 555 131C518 75 455 39 363 39L270 39C259 39 252 39 249 40C242 40 239 42 239 45C239 47 241 54 244 67L377 601C383 624 396 637 415 642C421 643 442 644 478 644C506 644 520 644 520 667Z"></path></g><g data-mml-node="mo" data-latex="+" transform="translate(3395.7,0)"><path data-c="2B" d="M698 274L413 274L413 559C413 575 405 583 389 583C373 583 365 575 365 559L365 274L80 274C64 274 56 266 56 250C56 234 64 226 80 226L365 226L365-59C365-75 373-83 389-83C405-83 413-75 413-59L413 226L698 226C714 226 722 234 722 250C722 263 711 274 698 274Z"></path></g><g data-mml-node="mi" data-latex="R" transform="translate(4395.9,0)"><path data-c="1D445" d="M739 531C739 582 713 621 662 649C621 672 572 683 517 683L235 683C212 683 202 682 202 659C202 652 205 647 211 646C221 645 229 644 234 644C264 643 281 641 286 640C291 639 294 636 294 631C294 629 293 623 290 613L158 82C153 60 143 46 128 41C121 39 103 38 72 38C50 38 41 37 41 15C41 4 47-1 59 0L183 3L309 0C325-1 333 8 333 23C333 33 322 38 301 38C261 38 241 43 241 52C241 52 242 54 244 68L308 327L423 327C492 327 527 298 527 241C527 232 522 210 513 174C502 132 497 104 497 89C497 13 556-22 632-22C660-22 687-9 714 16C741 41 755 68 755 96C755 106 750 111 739 111C732 111 726 106 723 95C712 64 698 41 682 28C666 15 651 8 636 8C613 8 601 27 601 64C601 88 604 125 611 176C614 197 615 212 615 223C615 276 587 315 531 339C625 362 739 429 739 531M609 616C629 603 639 581 639 550C639 530 635 507 626 480C599 398 531 357 422 357L316 357L379 610C384 631 392 642 403 643C408 644 428 644 463 644C528 644 566 642 609 616Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(5154.9,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g><g data-mml-node="mo" data-latex="\le" transform="translate(5821.7,0)"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mi" data-latex="K" transform="translate(6877.4,0)"><path data-c="1D43E" d="M804 680C783 680 715 683 694 683C679 683 671 675 671 659C671 651 678 646 692 643C706 640 714 635 714 628C714 617 703 602 680 585L302 296L379 602C384 623 393 636 406 641C412 643 429 644 458 644C484 644 496 644 496 668C496 678 490 683 478 683L351 680L223 683C207 684 199 676 199 660C199 649 210 644 232 644C252 644 293 647 293 631C293 629 292 623 289 613L156 82C151 60 141 47 126 42C119 40 101 39 70 39C48 39 38 37 38 16C38 5 44 0 57 0L183 3L246 2C257 2 299 0 310 0C326 0 334 8 334 24C334 34 324 39 303 39C262 39 242 43 242 52C242 57 245 72 251 95L290 249L433 359L546 98C553 81 557 70 557 65C557 48 541 39 510 39C492 39 484 35 484 15C484 5 490 0 502 0C524 0 600 3 622 3C641 3 701 0 720 0C734 0 741 8 741 24C741 33 733 38 718 39C677 39 667 50 653 81L512 404C511 409 509 413 508 416L708 570C757 608 799 631 833 639C857 643 889 642 889 668C889 678 884 683 874 683C860 683 818 680 804 680Z"></path></g></g></g></g><rect x="33.5" y="-481.5" width="8233.4" height="1463" fill="none" stroke-width="67"></rect></g></g></g></svg></mjx-container></p>
+<p>即可。</p>
+
+        </div>
+        <!-- .entry-content -->
+        
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2026/08/29/csp-j%E5%9F%BA%E6%9C%AC%E7%AD%BE%E5%88%B0%E9%A2%98%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                csp-j基本签到题专项训练</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 haoga123456<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "","name":"","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "","name":"","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="/img/avatar.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">算法学习笔记haoga123456</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://github.com/haoga123456" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="mailto:13664319003@139.com" class="fa fa-envelope-o" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-home" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/categories">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-tags" aria-hidden="true"></i>
+            分类
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/tags">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-tag" aria-hidden="true"></i>
+            标签
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-user" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id=""
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="false"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="none"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
